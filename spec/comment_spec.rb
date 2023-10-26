@@ -14,4 +14,11 @@ RSpec.describe Comment, type: :model do
     comment = Comment.create(text: 'Test Comment', user:, post:)
     expect { comment.destroy }.to change { post.reload.comments_counter }.by(-1)
   end
+
+  describe '#update_comments_counter' do
+    it 'updates the comments counter of the post' do
+      comment = Comment.create(text: 'Test Comment', user:, post:)
+      expect { comment.destroy }.to change { post.reload.comments_counter }.by(-1)
+    end
+  end
 end

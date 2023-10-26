@@ -12,4 +12,11 @@ RSpec.describe Like, type: :model do
     like = Like.create(user:, post:)
     expect { like.destroy }.to change { post.reload.likes_counter }.by(-1)
   end
+
+  describe '#update_likes_counter' do
+    it 'updates the likes counter of the post' do
+      like = Like.create(user:, post:)
+      expect { like.destroy }.to change { post.reload.likes_counter }.by(-1)
+    end
+  end
 end

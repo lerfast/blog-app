@@ -20,7 +20,6 @@ RSpec.describe User, type: :model do
         Post.create!(title: "Post #{i}", author: user, comments_counter: 0, likes_counter: 0, created_at: i.days.ago)
       end
 
-
       expect(user.three_most_recent_posts).to match_array(recent_posts)
     end
   end

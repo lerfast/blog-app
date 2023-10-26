@@ -15,7 +15,6 @@ RSpec.describe Post, type: :model do
     let!(:user) { User.create!(name: 'Test User', posts_counter: 0) }
     let!(:post) { Post.create!(title: 'Test Post', author: user, comments_counter: 0, likes_counter: 0) }
 
-
     it 'updates the posts counter of the author' do
       expect { post.destroy }.to change { user.reload.posts_counter }.by(-1)
     end

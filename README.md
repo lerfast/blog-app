@@ -24,9 +24,9 @@
 - [🙏 Acknowledgments](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 Blogger Rails <a name="about-project"></a>
+# 📖 Blog App <a name="about-project"></a>
 
-**Blogger Rails** In this project you will learn how to use a module inside your class.
+**Blog App** In this project you will learn how to use a module inside your class.
 
 ## 🚀 Key Features <a name="key-features"></a>
 
@@ -51,10 +51,73 @@ Created using Ruby!
 
 ![catalog_of_my_things](https://github.com/microverseinc/curriculum-ruby/blob/main/group-capstone/images/catalog_of_my_things.png)
 
-### Setup <a name="setup"></a>
+## 💻 Getting Started <a name="getting-started"></a>
 
-1. Ensure you have Ruby installed on your system.
-2. ... (rest of the setup)
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+
+```sh
+gem install ruby
+```
+- Browser (Google Chrome, Mozilla Firefox, Safari or any other browser)
+
+### Setup
+
+Clone this repository to your desired folder:
+
+
+```sh
+  cd my-folder
+  git clone https://github.com/lerfast/blog-app.git
+```
+
+### Install
+
+Install this project with:
+
+
+```sh
+  cd blog-app-rails
+  bundle install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```
+rails tailwindcss:watch
+control + c 
+rails s
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```
+rails tailwindcss:watch
+control + c
+rspec spec
+```
+
+<!-- ### Deployment
+
+You can deploy this project using:
+
+<!--
+Example:
+
+```sh
+
+```
+ -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 

@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    
 }
 
 .container {
@@ -16,37 +17,43 @@ body {
 
 /* Estilo para la lista de usuarios */
 .users-list {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .user-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: calc(100% / 4 - 20px); /* 4 usuarios por fila, con un gap de 20px */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 10px 190px;
     background-color: #fff;
+    border-radius: 5px;
 }
 
 .user-image img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
+    margin-right: 20px;
 }
 
-.user-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
+.user-info h2.user-name {
+    font-size: 46px;
+    margin-left: -156px;
 }
 
-.user-details span {
-    margin-top: 5px;
+.user-info p.post-count {
+   margin-right: -168px;
+    color: #888;
 }
 
 /* Estilo para el perfil del usuario */
@@ -95,26 +102,26 @@ body {
 
 
 .users-list {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    list-style: none;
+  padding: 5% 5% 0 5%;
+  width: 90%;
   }
   
   .user-container {
     display: flex;
-    align-items: center;
-    margin: 20px 0;
-    width: 80%; /* O el ancho que prefieras */
-    border: 1px solid #000; /* Borde básico para delimitar */
-    padding: 10px;
+  align-items: center;
+  margin-bottom: 0%;
   }
   
-  .user-image img {
-    width: 100px; /* Ajusta el tamaño según lo necesites */
-    height: 100px;
-    object-fit: cover; /* Esto hará que la imagen se ajuste correctamente */
-    margin-right: 20px;
+  .user-image{
+    width: 15%;
+    height: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 45px 47px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 1px solid black;
   }
   
   .user-details h2 {
@@ -128,4 +135,19 @@ body {
     font-size: 16px;
   }
   
-  
+  .user-name {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .post-count {
+    font-size: 0.9rem;
+    margin: 0 1% 0 0;
+    color: #888;
+    text-align: right;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+  }

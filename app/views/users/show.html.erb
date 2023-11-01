@@ -1,9 +1,12 @@
 <div class="user-profile">
-  <div class="user-image">
+  <div class="list">
+    <div class="user-image">
      <img src="path_to_default_user_image.jpg" alt="User Image">
-  </div>
-  <div class="user-name">
+    </div>
+    <div class="user-name">
     <%= @user.name %>
+    <p class="post-count">Number of posts: <%= @user.posts.count %></p>
+    </div>
   </div>
   <div class="user-bio">
     <%= @user.bio %> <!-- Suponiendo que 'bio' es el atributo para la biografía del usuario -->

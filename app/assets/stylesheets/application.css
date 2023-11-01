@@ -71,6 +71,13 @@ body {
 .user-bio {
     margin-top: 20px;
     text-align: justify;
+    margin-right: 31%;
+  align-items: center;
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 18px;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 .user-posts .post-summary {
@@ -150,4 +157,25 @@ body {
   .list {
     display: flex;
     flex-direction: row;
+  }
+
+  .bio-user,
+.user-post,
+.comments {
+  padding: 1% 1% 0.2% 1%;
+  border: 1px solid black;
+  margin-bottom: 1%;
+}
+
+.bio-user {
+  height: 15rem;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    margin-left: 19%;
+    margin-top: 2%;
   }

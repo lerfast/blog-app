@@ -3,23 +3,28 @@
     <div class="user-image">
      <img src="path_to_default_user_image.jpg" alt="User Image">
     </div>
+    <div class="user-container">
     <div class="user-name">
     <%= @user.name %>
     <p class="post-count">Number of posts: <%= @user.posts.count %></p>
     </div>
+    </div>
   </div>
   <div class="user-bio">
+  <h1>Bio</h1>
     <%= @user.bio %> <!-- Suponiendo que 'bio' es el atributo para la biografía del usuario -->
   </div>
 
   <div class="user-posts">
     <% @user.posts.limit(3).each do |post| %> <!-- Mostrando los primeros 3 posts -->
       <div class="post-summary">
-        <%= truncate(post.content, length: 100) %> <!-- Suponiendo que 'content' es el contenido del post -->
+        <%= post.content %> 
         <%= link_to 'Read More', post_path(post) %>
+        <%= @user.posts.count %>
       </div>
     <% end %>
-    <%= link_to 'See all posts', user_posts_path(@user) %>
+    
   </div>
+  <button class="button"><%= link_to 'See all posts', user_posts_path(@user) %></button>
 </div>
 <%= link_to 'Back', request.referer || root_path %>

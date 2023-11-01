@@ -2,12 +2,21 @@
 
 <%= link_to 'New Post', new_user_post_path(@user) %>
 
-
 <ul>
   <% @posts.each do |post| %>
     <li>
       <%= link_to post.title, post_path(post) %>
+      <h3>Comments</h3>
+      <ul>
+        <% post.comments.each do |comment| %>
+          <li>
+            <strong><%= comment.user.name %>:</strong>
+            <p><%= comment.text %></p>
+          </li>
+        <% end %>
+      </ul>
     </li>
   <% end %>
 </ul>
+
 <%= link_to 'Back', request.referer || root_path %>

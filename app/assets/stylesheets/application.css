@@ -1,165 +1,145 @@
 /* Estilo general */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para la lista de usuarios */
 .users-list {
-    list-style: none;
-    width: 80%;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 5% 0 5%;
 }
 
 .user-container {
-    display: flex;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 190px;
-    background-color: #fff;
-    border-radius: 5px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 190px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 0%;
 }
 
 .user-image img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
 }
 
 .user-info h2.user-name {
-    font-size: 46px;
-    margin-left: -156px;
+  font-size: 46px;
+  margin-left: -156px;
 }
 
 .user-info p.post-count {
-   margin-right: -168px;
-    color: #888;
+  margin-right: -168px;
+  color: #888;
 }
 
 /* Estilo para el perfil del usuario */
 .user-profile .user-image img {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 .user-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 15px;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 1.2rem;
 }
 
 .user-bio {
-    margin-top: 20px;
-    text-align: justify;
-    margin-right: 31%;
+  margin-top: 20px;
+  text-align: justify;
+  margin-right: 31%;
   align-items: center;
-  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 18px;
-    background-color: #fff;
-    border-radius: 5px;
+  padding: 10px 18px;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .user-posts .post-summary {
-    margin-top: 20px;
-    border-bottom: 1px solid #eaeaea;
-    padding-bottom: 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
 }
 
 /* Estilo para la vista de todos los posts del usuario */
 .user-posts .post-content {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .post-comments {
-    margin-top: 15px;
-    padding-left: 20px;
+  margin-top: 15px;
+  padding-left: 20px;
 }
 
 .comment {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
 }
 
 /* Estilo para el post detallado */
 .post-detail .post-content {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
+.user-image {
+  width: 15%;
+  height: 5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 45px 47px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: 1px solid black;
+}
 
-.users-list {
-    list-style: none;
-  padding: 5% 5% 0 5%;
-  width: 90%;
-  }
-  
-  .user-container {
-    display: flex;
-  align-items: center;
-  margin-bottom: 0%;
-  }
-  
-  .user-image{
-    width: 15%;
-    height: 5%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 45px 47px;
-    background-color: #fff;
-    border-radius: 5px;
-    margin-right: 10px;
-    border: 1px solid black;
-  }
-  
-  .user-details h2 {
-    margin: 0;
-    font-size: 20px;
-  }
-  
-  .user-details span {
-    display: block;
-    margin-top: 10px;
-    font-size: 16px;
-  }
-  
-  .user-name {
-    font-size: 1.2rem;
-    margin: 0;
-  }
+.user-details h2 {
+  margin: 0;
+  font-size: 20px;
+}
 
-  .post-count {
-    font-size: 0.9rem;
-    margin: 0 1% 0 0;
-    color: #888;
-    text-align: right;
-  }
+.user-details span {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+}
 
-  .list {
-    display: flex;
-    flex-direction: row;
-  }
+.post-count {
+  font-size: 0.9rem;
+  margin: 0 1% 0 0;
+  color: #888;
+  text-align: right;
+}
 
-  .bio-user,
+.list {
+  display: flex;
+  flex-direction: row;
+}
+
+.bio-user,
 .user-post,
 .comments {
   padding: 1% 1% 0.2% 1%;
@@ -172,10 +152,10 @@ body {
 }
 
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 46px;
-    margin-left: 19%;
-    margin-top: 2%;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  margin-left: 19%;
+  margin-top: 2%;
+}

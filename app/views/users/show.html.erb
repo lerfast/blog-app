@@ -18,9 +18,9 @@
   <div class="user-posts">
     <% @user.posts.limit(3).each do |post| %> <!-- Mostrando los primeros 3 posts -->
       <div class="post-summary">
-        <%= post.content %> 
-        <%= link_to 'Read More', post_path(post) %>
-        <%= @user.posts.count %>
+       
+        <%= link_to 'Read Post', post_path(post) %>
+       
       </div>
     <% end %>
     

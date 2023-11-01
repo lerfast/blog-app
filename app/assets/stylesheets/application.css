@@ -1,15 +1,131 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la lista de usuarios */
+.users-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% / 4 - 20px); /* 4 usuarios por fila, con un gap de 20px */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+}
+
+.user-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.user-details span {
+    margin-top: 5px;
+}
+
+/* Estilo para el perfil del usuario */
+.user-profile .user-image img {
+    width: 150px;
+    height: 150px;
+}
+
+.user-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.user-bio {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.user-posts .post-summary {
+    margin-top: 20px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+}
+
+/* Estilo para la vista de todos los posts del usuario */
+.user-posts .post-content {
+    margin-top: 20px;
+}
+
+.post-comments {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.comment {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para el post detallado */
+.post-detail .post-content {
+    margin-top: 20px;
+}
+
+
+.users-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    width: 80%; /* O el ancho que prefieras */
+    border: 1px solid #000; /* Borde básico para delimitar */
+    padding: 10px;
+  }
+  
+  .user-image img {
+    width: 100px; /* Ajusta el tamaño según lo necesites */
+    height: 100px;
+    object-fit: cover; /* Esto hará que la imagen se ajuste correctamente */
+    margin-right: 20px;
+  }
+  
+  .user-details h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .user-details span {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  

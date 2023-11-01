@@ -1,2 +1,13 @@
 <h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
+<p><%= @post.text %></p>
+
+<h2>Comments</h2>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li>
+      <strong><%= comment.user.name %>:</strong>
+      <p><%= comment.text %></p>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Back', request.referer || root_path %>

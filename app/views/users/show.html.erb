@@ -1,2 +1,22 @@
-<h1><%= @user.name %></h1>
-<p>Here will be the information of a specific user.</p>
+<div class="user-profile">
+  <div class="user-image">
+     <img src="path_to_default_user_image.jpg" alt="User Image">
+  </div>
+  <div class="user-name">
+    <%= @user.name %>
+  </div>
+  <div class="user-bio">
+    <%= @user.bio %> <!-- Suponiendo que 'bio' es el atributo para la biografía del usuario -->
+  </div>
+
+  <div class="user-posts">
+    <% @user.posts.limit(3).each do |post| %> <!-- Mostrando los primeros 3 posts -->
+      <div class="post-summary">
+        <%= truncate(post.content, length: 100) %> <!-- Suponiendo que 'content' es el contenido del post -->
+        <%= link_to 'Read More', post_path(post) %>
+      </div>
+    <% end %>
+    <%= link_to 'See all posts', user_posts_path(@user) %>
+  </div>
+</div>
+<%= link_to 'Back', request.referer || root_path %>

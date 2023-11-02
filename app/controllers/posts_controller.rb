@@ -1,39 +1,31 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy like]
 
-  
+
   def new
-    
     @user = User.find_by(id: params[:user_id]) || current_user
-    
+
     @post = @user.posts.build
   end
 
- 
   def show
     @comment = Comment.new
   end
 
-  
   def create
-    
     user = User.find_by(id: params[:user_id]) || current_user
-    
+
     @post = user.posts.build(post_params)
-  
+
     if @post.save
       redirect_to post_path(@post), notice: 'Post was successfully created.'
     else
       render :new
     end
   end
-  
-  
 
-  
   def edit; end
 
-  
   def update
     if @post.update(post_params)
       redirect_to @post, notice: 'Post was successfully updated.'
@@ -42,13 +34,11 @@ class PostsController < ApplicationController
     end
   end
 
- 
   def destroy
     @post.destroy
     redirect_to user_posts_path(current_user), notice: 'Post was successfully destroyed.'
   end
 
-  
   def like
     if @post.increment!(:likes_counter)
       redirect_to @post, notice: 'You liked the post!'
@@ -56,6 +46,7 @@ class PostsController < ApplicationController
       redirect_to root_path, alert: 'Post not found.'
     end
   end
+
   def index
     if params[:user_id]
       @user = User.find_by(id: params[:user_id])
@@ -64,17 +55,17 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
   end
-  
+
 
   private
 
-  
+
   def set_post
     @post = Post.find_by(id: params[:id])
-    if @post.nil?
-      flash[:alert] = 'Post not found.'
-      redirect_to root_path
-    end
+    return unless @post.nil?
+
+    flash[:alert] = 'Post not found.'
+    redirect_to root_path
   end
 
   def post_params

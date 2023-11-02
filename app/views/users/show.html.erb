@@ -1,30 +1,47 @@
 <div class="user-profile">
+
+  <!-- User information and profile picture -->
   <div class="list">
     <div class="user-image">
-     <img src="path_to_default_user_image.jpg" alt="User Image">
+      <img src="path_to_default_user_image.jpg" alt="User Image">
     </div>
     <div class="user-container">
-    <div class="user-name">
-    <%= @user.name %>
-    <p class="post-count">Number of posts: <%= @user.posts.count %></p>
+      <div class="user-name">
+        <%= @user.name %>
+        <p class="post-count">Number of posts: <%= @user.posts.count %></p>
+      </div>
     </div>
-    </div>
-  </div>
-  <div class="user-bio">
-  <h1>Bio</h1>
-    <%= @user.bio %> <!-- Suponiendo que 'bio' es el atributo para la biografía del usuario -->
   </div>
 
-  <div class="user-posts">
-    <% @user.posts.limit(3).each do |post| %> <!-- Mostrando los primeros 3 posts -->
+  <!-- User biography -->
+  <div class="user-bio">
+    <h1>Bio</h1>
+    <%= @user.bio %> <!-- Assuming 'bio' is the attribute for user's biography -->
+  </div>
+
+  <!-- Latest posts from the user -->
+  
+    <% @user.posts.limit(3).each do |post| %> 
+    <div class="user-bio">
       <div class="post-summary">
-       
-        <%= link_to 'Read Post', post_path(post) %>
-       
+        <h3 class="post-title"><%= post.title %></h3>
+        <%= post.text %>
+        <p class="post-count">Number of comments: <%= post.comments.count %></p> 
+        <p class="post-count">Number of likes: <%= post.likes_counter %></p> 
+        <p><%= link_to 'Read Post', post_path(post) %></p> 
+      </div>
       </div>
     <% end %>
-    
+  
+
+  <!-- Button to view all posts from the user -->
+  <div class="user-all-posts-button">
+    <button class="button">
+      <%= link_to 'See all posts', user_posts_path(@user) %>
+    </button>
   </div>
-  <button class="button"><%= link_to 'See all posts', user_posts_path(@user) %></button>
+  
 </div>
+
+<!-- Link to go back -->
 <%= link_to 'Back', request.referer || root_path %>

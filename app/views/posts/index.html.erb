@@ -1,22 +1,42 @@
-<h1>All Posts</h1>
+<div class="user-profile">
+  <div class="list">
+    <div class="user-image">
+      <img src="path_to_default_user_image.jpg" alt="User Image">
+    </div>
+    <div class="user-container">
+      <div class="user-name">
+        <%= @user.name %>
+        <p class="post-count">Number of posts: <%= @user.posts.count %></p>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'New Post', new_user_post_path(@user) %>
+  <%= link_to 'New Post', new_user_post_path(@user) %>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, post_path(post) %>
-      <h3>Comments</h3>
-      <ul>
-        <% post.comments.each do |comment| %>
-          <li>
-            <strong><%= comment.user.name %>:</strong>
-            <p><%= comment.text %></p>
-          </li>
-        <% end %>
-      </ul>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @posts.each do |post| %>
+      <li class="user-bio">
+        <%= link_to post.title, post_path(post) %>
+       <p><%= post.text %></p> <!-- Mostrar el contenido del post -->
 
-<%= link_to 'Back', request.referer || root_path %>
+        <p class="post-count">Number of comments: <%= post.comments.count %></p> <!-- Mostrar número de comentarios -->
+        <p class="post-count">Number of likes: <%= post.likes_counter %></p> <!-- Mostrar número de likes -->
+</li>
+        <div class="user-bio">
+        <!-- Si quieres seguir mostrando los comentarios en detalle, puedes dejar este código -->
+        <h3>Comments</h3>
+        <ul>
+          <% post.comments.each do |comment| %>
+            <li>
+              <strong><%= comment.user.name %>:</strong>
+              <p><%= comment.text %></p>
+            </li>
+          <% end %>
+        </ul>
+        </div>
+      
+    <% end %>
+  </ul>
+
+  <%= link_to 'Back', request.referer || root_path %>
+</div>

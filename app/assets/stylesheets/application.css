@@ -14,7 +14,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .users-list {
   list-style: none;
   width: 80%;
@@ -55,7 +54,6 @@ body {
   color: #888;
 }
 
-
 .user-profile .user-image img {
   width: 150px;
   height: 150px;
@@ -84,7 +82,6 @@ body {
   padding-bottom: 10px;
 }
 
-
 .user-posts .post-content {
   margin-top: 20px;
 }
@@ -99,7 +96,6 @@ body {
   padding: 10px;
   background-color: #f9f9f9;
 }
-
 
 .post-detail .post-content {
   margin-top: 20px;

@@ -17,16 +17,16 @@
     <% @posts.each do |post| %>
       <li class="user-bio">
         <%= link_to post.title, post_path(post) %>
-       <p><%= post.text %></p> <!-- Mostrar el contenido del post -->
+       <p><%= post.text %></p> 
 
-        <p class="post-count">Number of comments: <%= post.comments.count %></p> <!-- Mostrar número de comentarios -->
-        <p class="post-count">Number of likes: <%= post.likes_counter %></p> <!-- Mostrar número de likes -->
+        <p class="post-count">Number of comments: <%= post.comments.count %></p> 
+        <p class="post-count">Number of likes: <%= post.likes_counter %></p> 
 </li>
         <div class="user-bio">
-        <!-- Si quieres seguir mostrando los comentarios en detalle, puedes dejar este código -->
+        
         <h3>Comments</h3>
         <ul>
-          <% post.comments.each do |comment| %>
+          <% post.recent_comments.each do |comment| %>
             <li>
               <strong><%= comment.user.name %>:</strong>
               <p><%= comment.text %></p>

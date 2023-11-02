@@ -1,4 +1,4 @@
-/* Estilo general */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -14,7 +14,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para la lista de usuarios */
+
 .users-list {
   list-style: none;
   width: 80%;
@@ -55,7 +55,7 @@ body {
   color: #888;
 }
 
-/* Estilo para el perfil del usuario */
+
 .user-profile .user-image img {
   width: 150px;
   height: 150px;
@@ -84,7 +84,7 @@ body {
   padding-bottom: 10px;
 }
 
-/* Estilo para la vista de todos los posts del usuario */
+
 .user-posts .post-content {
   margin-top: 20px;
 }
@@ -100,7 +100,7 @@ body {
   background-color: #f9f9f9;
 }
 
-/* Estilo para el post detallado */
+
 .post-detail .post-content {
   margin-top: 20px;
 }

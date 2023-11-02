@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    # Lista aquí los atributos permitidos para un usuario, por ejemplo:
+    
     params.require(:user).permit(:name, :email, :password)
   end
 end

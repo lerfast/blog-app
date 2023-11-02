@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_referer
-    # Guardar solo si el request.referer es diferente a la request.url actual para evitar que se guarden referencias circulares
     session[:return_to] = request.referer if request.url != request.referer
   end
 

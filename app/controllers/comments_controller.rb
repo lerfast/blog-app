@@ -1,10 +1,9 @@
-# app/controllers/comments_controller.rb
 class CommentsController < ApplicationController
     before_action :set_post
   
     def create
       @comment = @post.comments.new(comment_params)
-      @comment.user = current_user # Asegúrate de asignar el usuario actual como autor del comentario
+      @comment.user = current_user 
   
       if @comment.save
         redirect_to post_path(@post), notice: 'Comment was successfully created.'

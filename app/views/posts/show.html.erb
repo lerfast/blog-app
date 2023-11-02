@@ -15,7 +15,7 @@
     <% end %>
   </ul>
 
-  <!-- Formulario para nuevo comentario -->
+  
   <%= form_with(model: [@post, Comment.new]) do |form| %>
     <div class="field">
       <%= form.label :text, "New Comment" %>

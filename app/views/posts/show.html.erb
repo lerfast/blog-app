@@ -1,12 +1,12 @@
 <div class="post">
-<ul class="comments2">
   <h1><%= @post.title %> by <span class="username"><%= @post.author.name %></span></h1>
   <p class="post-details">Comments: <%= @post.comments.count %>, Likes: <%= @post.likes_counter %></p>
   <p class="post-content"><%= @post.text %></p>
-</ul>
-  
-  <ul class="comments2">
+
+  <%= button_to 'Like', like_post_path(@post), method: :put, class: "like-button" %>
+
   <h2>Comments</h2>
+  <ul class="comments">
     <% @post.comments.each do |comment| %>
       <li>
         <strong><%= comment.user.name %>:</strong>
@@ -14,5 +14,19 @@
       </li>
     <% end %>
   </ul>
-  <%= link_to 'Back', request.referer || root_path %>
+
+  <!-- Formulario para nuevo comentario -->
+  <%= form_with(model: [@post, Comment.new]) do |form| %>
+    <div class="field">
+      <%= form.label :text, "New Comment" %>
+      <%= form.text_area :text %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Add Comment" %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Back', session[:return_to] || user_posts_path(@post.author), class: "btn btn-secondary" %>
+
+
 </div>

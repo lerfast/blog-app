@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy like]
 
-
   def new
     @user = User.find_by(id: params[:user_id]) || current_user
 
@@ -56,9 +55,7 @@ class PostsController < ApplicationController
     end
   end
 
-
   private
-
 
   def set_post
     @post = Post.find_by(id: params[:id])

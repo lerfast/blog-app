@@ -16,9 +16,9 @@ RSpec.describe Post, type: :model do
   
     it 'increments the posts counter of the author when a post is destroyed' do
       post = Post.create!(title: 'Test Post', author: user, comments_counter: 0, likes_counter: 0)
-      # El contador inicialmente es incrementado a 1 cuando se crea el post.
+      
       expect(user.reload.posts_counter).to eq(1)
-      # Aquí se espera que el contador sea incrementado a 2 cuando se destruye el post.
+      
       expect { post.destroy }.to change { user.reload.posts_counter }.by(1)
     end
   end

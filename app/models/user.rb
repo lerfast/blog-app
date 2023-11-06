@@ -9,7 +9,7 @@ class User < ApplicationRecord
   before_validation :set_default_posts_counter
 
   def three_most_recent_posts
-    posts.order(created_at: :desc).limit(3)
+    posts.includes(:comments).order(created_at: :desc).limit(3)
   end
 
   private

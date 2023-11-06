@@ -1,13 +1,11 @@
 <div class="user-profile">
   <div class="list">
     <div class="user-image">
-      <!-- Asegúrate de que 'path_to_default_user_image.jpg' sea la ruta correcta de la imagen en tu directorio de assets -->
        <img src="path_to_default_user_image.jpg" alt="User Image">
     </div>
     <div class="user-container">
       <div class="user-name">
         <%= @user.name %>
-        <!-- Usa 'size' para obtener el número de posts desde la asociación cargada -->
         <p class="post-count">Number of posts: <%= @user.posts.size %></p>
       </div>
     </div>
@@ -23,7 +21,6 @@
       <div class="post-summary">
         <h3 class="post-title"><%= post.title %></h3>
         <%= post.text %>
-        <!-- Usa 'size' también aquí para los comentarios -->
         <p class="post-count">Number of comments: <%= post.comments.size %></p>
         <p class="post-count">Number of likes: <%= post.likes_counter %></p> 
         <p><%= link_to 'Read Post', post_path(post) %></p> 

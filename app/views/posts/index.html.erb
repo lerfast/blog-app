@@ -19,7 +19,7 @@
         <%= link_to post.title, post_path(post) %>
        <p><%= post.text %></p> 
 
-        <p class="post-count">Number of comments: <%= post.comments.count %></p>
+        <p class="post-count">Number of comments: <%= post.comments.size %></p>
 <p class="post-count">Number of likes: <%= post.likes_counter %></p> 
 </li>
         <div class="user-bio">

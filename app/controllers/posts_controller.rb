@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
+    @post = Post.includes(comments: :user).find(params[:id])
   end
 
   def create
@@ -49,11 +49,13 @@ class PostsController < ApplicationController
   def index
     if params[:user_id]
       @user = User.find_by(id: params[:user_id])
-      @posts = @user ? @user.posts : Post.none
+      # Precarga tanto los comentarios como los usuarios de los comentarios
+      @posts = @user.posts.includes(comments: :user).order(created_at: :desc)
     else
-      @posts = Post.all
+      @posts = Post.includes(:comments).order(created_at: :desc)
     end
   end
+  
 
   private
 

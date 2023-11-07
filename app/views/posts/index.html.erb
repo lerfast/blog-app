@@ -14,16 +14,14 @@
   <%= link_to 'New Post', new_user_post_path(@user) %>
 
   <ul>
-    <% @posts.each do |post| %>
-      <li class="user-bio">
-        <%= link_to post.title, post_path(post) %>
-       <p><%= post.text %></p> 
+  <% @posts.each do |post| %>
+    <li id="post_<%= post.id %>" class="user-bio">
+      <%= link_to post.title, post_path(post) %>
+      <p><%= post.text %></p> 
+      <p class="post-count">Number of comments: <%= post.comments.size %></p>
+      <p class="post-count">Number of likes: <%= post.likes_counter %></p> 
 
-        <p class="post-count">Number of comments: <%= post.comments.size %></p>
-<p class="post-count">Number of likes: <%= post.likes_counter %></p> 
-</li>
-        <div class="user-bio">
-        
+      <div class="user-bio">
         <h3>Comments</h3>
         <ul>
           <% post.recent_comments.each do |comment| %>
@@ -33,10 +31,11 @@
             </li>
           <% end %>
         </ul>
-        </div>
-      
-    <% end %>
-  </ul>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
 
   <%= link_to 'Back to Users', users_path, class: "btn btn-secondary" %>
 

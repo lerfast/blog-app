@@ -4,16 +4,11 @@
 
 <ul class="users-list">
   <% @users.each do |user| %>
-    <div class="list">
-      <div class="user-image">
-        <img src="/images/path_to_default_user_image.jpg" alt="User Image">
+    <li id="user_<%= user.id %>" class="user-container">
+      <div class="user-info">
+        <h2 class="user-name"><%= link_to user.name, user_path(user) %></h2>
+        <p class="post-count">Number of posts: <%= user.posts.size %></p>
       </div>
-      <li class="user-container">
-        <div class="user-info">
-          <h2 class="user-name"><%= link_to user.name, user_path(user) %></h2>
-          <p class="post-count">Number of posts: <%= user.posts.size %></p>
-        </div>
-      </li>
-    </div>
+    </li>
   <% end %>
 </ul>

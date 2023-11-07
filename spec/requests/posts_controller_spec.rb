@@ -23,17 +23,17 @@ RSpec.describe 'PostsController', type: :request do
 
   describe 'GET /show' do
     it 'returns a successful response' do
-      get user_post_path(post)
+      get post_path(post)
       expect(response).to have_http_status(:success)
     end
 
     it 'renders the show template' do
-      get user_post_path(post)
+      get post_path(post)
       expect(response).to render_template(:show)
     end
 
     it "includes the post's title in the response body" do
-      get user_post_path(post)
+      get post_path(post)
       expect(response.body).to include(post.title)
     end
   end

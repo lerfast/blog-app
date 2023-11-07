@@ -52,7 +52,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_01_175908) do
     t.integer "posts_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email"
   end
 
   add_foreign_key "comments", "posts"

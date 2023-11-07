@@ -5,8 +5,10 @@ require 'rails_helper'
 RSpec.describe 'Post show page', type: :feature do
   let(:user) { create(:user) }
   let(:post) { create(:post, author: user) }
-  let!(:comments) { create_list(:comment, 3, post: post, user: user) } # Asegúrate de que los comentarios están asociados con el post y el usuario
-
+  # Asegúrate de que los comentarios están asociados con el post y el usuario
+  let!(:comments) do
+    create_list(:comment, 3, post:, user:)
+  end
   before do
     visit post_path(post)
   end

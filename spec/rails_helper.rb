@@ -18,7 +18,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = "#{Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
@@ -27,5 +27,5 @@ RSpec.configure do |config|
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
-# spec/support/ and its subdirectories. 
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+# spec/support/ and its subdirectories.
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }

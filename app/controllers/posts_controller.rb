@@ -55,7 +55,7 @@ class PostsController < ApplicationController
       @posts = Post.includes(:comments).order(created_at: :desc)
     end
   end
-  
+
 
   private
 

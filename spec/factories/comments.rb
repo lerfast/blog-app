@@ -1,7 +1,7 @@
 FactoryBot.define do
-    factory :comment do
-      text { "This is a comment." }
-      post
-      user
-    end
+  factory :comment do
+    text { 'This is a comment.' }
+    post
+    user
   end
+end

@@ -23,7 +23,6 @@ RSpec.describe Post, type: :model do
     end
   end
 
-
   describe '#recent_comments' do
     let!(:user) { User.create!(name: 'Test User', posts_counter: 0) }
     let!(:post) { Post.create!(title: 'Test Post', author: user, comments_counter: 0, likes_counter: 0) }

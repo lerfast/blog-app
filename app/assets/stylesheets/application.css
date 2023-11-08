@@ -193,3 +193,62 @@ h1 {
   font-size: 16px;
   margin-bottom: 10px;
 }
+
+/* Añade esto al final de tu archivo application.css */
+
+.login-container {
+  width: 300px; /* Ajusta esto según el ancho deseado */
+  margin: 100px auto; /* Aumenta el margen superior para centrar verticalmente */
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.actions input[type="submit"] {
+  width: calc(100% - 20px); /* Resta el padding a cada lado */
+  padding: 10px;
+  background-color: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Puedes agregar también algunas reglas para centrar todo el texto dentro de .login-container si es necesario */
+
+
+/* Asegúrate de que el resto de tu aplicación.css no esté afectando el estilo de tu formulario de login */
+
+.field input {
+  width: calc(100% - 20px); /* Resta el padding a cada lado */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+
+
+/* Puedes agregar también algunas reglas para centrar todo el texto dentro de .login-container si es necesario */
+
+
+/* Asegúrate de que el resto de tu aplicación.css no esté afectando el estilo de tu formulario de login */
+.welcome-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.welcome-header h1 {
+  font-size: 2em; /* Ajusta el tamaño de la fuente como prefieras */
+  color: #333; /* Cambia el color si lo deseas */
+  padding: 10px 0; /* Ajusta el relleno si es necesario */
+}

@@ -222,7 +222,6 @@ h1 {
 
 /* Puedes agregar también algunas reglas para centrar todo el texto dentro de .login-container si es necesario */
 
-
 /* Asegúrate de que el resto de tu aplicación.css no esté afectando el estilo de tu formulario de login */
 
 .field input {
@@ -235,12 +234,7 @@ h1 {
 .actions {
   margin-top: 20px;
 }
-
-
-
 /* Puedes agregar también algunas reglas para centrar todo el texto dentro de .login-container si es necesario */
-
-
 /* Asegúrate de que el resto de tu aplicación.css no esté afectando el estilo de tu formulario de login */
 .welcome-header {
   text-align: center;

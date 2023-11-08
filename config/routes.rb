@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     root to: 'devise/sessions#new', as: :unauthenticated_root
   end
 
- 
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy], shallow: true do
       put 'like', on: :member 

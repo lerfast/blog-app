@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
   end
-  
+
   # Modificar el método :destroy para que no dependa de :set_post
   def destroy
     @comment = Comment.find(params[:id]) # Encuentra el comentario directamente
@@ -28,7 +28,6 @@ class CommentsController < ApplicationController
 
   private
 
-  # Este método solo es necesario para la acción :create, por lo que podrías mover la lógica de encontrar el post dentro de :create.
   def set_post
     @post = Post.find(params[:post_id])
   end

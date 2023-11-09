@@ -193,3 +193,49 @@ h1 {
   font-size: 16px;
   margin-bottom: 10px;
 }
+
+.login-container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.actions input[type="submit"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  background-color: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.field input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.welcome-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.welcome-header h1 {
+  font-size: 2em;
+  color: #333;
+  padding: 10px 0;
+}

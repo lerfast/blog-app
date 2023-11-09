@@ -11,11 +11,16 @@
       <li>
         <strong><%= comment.user.name %>:</strong>
         <p><%= comment.text %></p>
+        <% if can?(:destroy, comment) %>
+          <%= link_to 'Delete Comment', [comment.post, comment],
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' },
+                      class: 'delete-comment' %>
+        <% end %>
       </li>
     <% end %>
   </ul>
 
-  
   <%= form_with(model: [@post, Comment.new]) do |form| %>
     <div class="field">
       <%= form.label :text, "New Comment" %>
@@ -27,6 +32,4 @@
   <% end %>
 
   <%= link_to 'Back', session[:return_to] || user_posts_path(@post.author), class: "btn btn-secondary" %>
-
-
 </div>

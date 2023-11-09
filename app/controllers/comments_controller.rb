@@ -1,8 +1,14 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource only: [:destroy]
   before_action :set_post
 
   def new
     @comment = Comment.new
+  end
+  
+  def destroy
+    @comment.destroy
+    redirect_to post_path(@comment.post), notice: 'Comment was successfully destroyed.'
   end
 
   def create
@@ -16,6 +22,8 @@ class CommentsController < ApplicationController
 
       render :new
     end
+
+    
   end
 
   private

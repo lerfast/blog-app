@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource only: [:destroy]
   before_action :set_post, only: %i[show edit update destroy like]
 
   def new

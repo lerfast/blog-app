@@ -3,7 +3,12 @@
   <p class="post-details">Comments: <%= @post.comments.size %>, Likes: <%= @post.likes_counter %></p>
   <p class="post-content"><%= @post.text %></p>
 
-  <%= button_to 'Like', like_post_path(@post), method: :put, class: "like-button" %>
+  <% if can?(:destroy, @post) %>
+    <%= link_to 'Delete Post', post_path(@post),
+                method: :delete,
+                data: { confirm: 'Are you sure?' },
+                class: 'delete-post' %>
+  <% end %>
 
   <h2>Comments</h2>
   <ul class="comments">
@@ -12,11 +17,11 @@
         <strong><%= comment.user.name %>:</strong>
         <p><%= comment.text %></p>
         <% if can?(:destroy, comment) %>
-          <%= link_to 'Delete Comment', [comment.post, comment],
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' },
-                      class: 'delete-comment' %>
-        <% end %>
+  <%= button_to 'Delete Comment', comment_path(comment), 
+                method: :delete, 
+                data: { confirm: 'Are you sure?' }, 
+                class: 'delete-comment' %>
+<% end %>
       </li>
     <% end %>
   </ul>

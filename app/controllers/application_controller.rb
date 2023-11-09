@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_referer
-
+#hello
   protected
 
   def configure_permitted_parameters

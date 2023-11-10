@@ -3,7 +3,16 @@
   <p class="post-details">Comments: <%= @post.comments.size %>, Likes: <%= @post.likes_counter %></p>
   <p class="post-content"><%= @post.text %></p>
 
-  <%= button_to 'Like', like_post_path(@post), method: :put, class: "like-button" %>
+  <% if can?(:destroy, @post) %>
+  <p>User can delete this post</p>
+  <%= button_to 'Delete Post', post_path(@post), 
+      method: :delete, 
+      data: { confirm: 'Are you sure?' }, 
+      class: 'delete-post' %>
+<% else %>
+  <p>User cannot delete this post</p>
+<% end %>
+
 
   <h2>Comments</h2>
   <ul class="comments">
@@ -11,11 +20,16 @@
       <li>
         <strong><%= comment.user.name %>:</strong>
         <p><%= comment.text %></p>
+        <% if can?(:destroy, comment) %>
+  <%= button_to 'Delete Comment', comment_path(comment), 
+              method: :delete, 
+              data: { confirm: 'Are you sure?' }, 
+              class: 'delete-comment' %>
+<% end %>
       </li>
     <% end %>
   </ul>
 
-  
   <%= form_with(model: [@post, Comment.new]) do |form| %>
     <div class="field">
       <%= form.label :text, "New Comment" %>
@@ -27,6 +41,4 @@
   <% end %>
 
   <%= link_to 'Back', session[:return_to] || user_posts_path(@post.author), class: "btn btn-secondary" %>
-
-
 </div>

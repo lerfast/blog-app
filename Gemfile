@@ -41,7 +41,6 @@ gem 'jbuilder'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 gem 'rubocop', '>= 1.0', '< 2.0'

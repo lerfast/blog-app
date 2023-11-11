@@ -49,7 +49,6 @@
 Blogger Rails is a console app that will help you to keep a record of different types of things you own: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below. The data will be stored in JSON files.
 Created using Ruby!
 
-![catalog_of_my_things](https://github.com/microverseinc/curriculum-ruby/blob/main/group-capstone/images/catalog_of_my_things.png)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
